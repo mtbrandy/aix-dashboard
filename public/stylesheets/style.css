@@ -1,0 +1,59 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: black;
+  background-color: #B0D0D0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#output p {
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+}
+
+#list {
+  border-collapse: collapse;
+}
+
+#list th {
+  background: lightgray;
+  border: 1px solid grey;
+  padding: 3px;
+}
+
+#list td {
+  border: 1px solid grey;
+  padding: 3px;
+}
+
+#object th {
+  font-weight: bold;
+  text-align: left;
+}
+
+#status p {
+  font-style: italic;
+}
+
+#footer p {
+  font-style: italic;
+}
+
+#messageInfo input {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#inputMessageText {
+  width: 300px;
+}
+#inputMessageTTY {
+  width: 50px;
+}

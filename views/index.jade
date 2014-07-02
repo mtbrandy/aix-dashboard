@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1= title
+
+    button#btnConfig Configuration
+    button#btnOSLevel OSLevel
+    button#btnPS Processes
+    button#btnLogins Logins
+    button#btnFS Filesystems
+    button#btnPackages Packages
+    button#btnNPMs NPMs
+
+    #userInfo
+      input#inputUserName(type='text', placeholder='Username')
+      button#btnUserInfo Info
+      button#btnUserPS Processes
+
+    #messageInfo
+      input#inputMessageText(type='text', placeholder='Message text')
+      input#inputMessageTTY(type='text', placeholder='tty')
+      button#btnSendMessage Send
+
+    #output
+      p
+        <span id='cmdOutput'></span>
+
+    #status
+      p
+        <span id='identity'></span>
+        br
+        <span id='uptime'></span>
+
+    #footer
+      p
+        <span id='navigation'></span>
+
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+  script(src='/javascripts/main.js')

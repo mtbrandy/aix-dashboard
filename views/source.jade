@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/source.css')
+  body
+    #files
+      p
+        <span id='fileList'></span>
+
+    #contents
+      p
+        <span id='fileName'></span>
+        <span id='fileContents'></span>
+
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+  script(src='/javascripts/source.js')
