@@ -123,13 +123,13 @@ jsonRespHandlers = {
  * Define route to POST message.
  */
 router.post('/message', function(req, res) {
-    var message = req.body;
-    var cmd = '';
-    cmd += 'printf "\\nAIX Dashboard says: \\"' + message.text + '\\"\\n"';
-    cmd += '> /dev/' + message.tty;
-    child.exec(cmd, function(error, stdout, stderr) {
-      res.send(error ? { msg: stderr } : { msg: '' });
-    });
+  var message = req.body;
+  var cmd = '';
+  cmd += 'printf "\\nAIX Dashboard says: \\"' + message.text + '\\"\\n"';
+  cmd += '> /dev/' + message.tty;
+  child.exec(cmd, function(error, stdout, stderr) {
+    res.send(error ? { msg: stderr } : { msg: '' });
+  });
 });
 
 module.exports = router;

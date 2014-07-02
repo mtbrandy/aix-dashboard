@@ -141,6 +141,9 @@ function retrieveObject(route) {
   });
 }
 
+/*
+ * Send message to a tty.
+ */
 function sendMessage() {
   var message = {
     text: $('#messageInfo input#inputMessageText').val(),
@@ -152,17 +155,11 @@ function sendMessage() {
     return;
   }
 
-  /* Use AJAX to post the object to our message service. */
-  $.ajax({
-    type: 'POST',
-    data: message,
-    url: '/message',
-    dataType: 'JSON'
-  }).done(function( response ) {
+  $.post('/message', message, function(response) {
     if (response.msg === '') {
       displayStatus('Message delivered.');
     } else {
       displayOutput('<pre>' + response.msg + '</pre>');
     }
-  });
+  }, 'json');
 }
