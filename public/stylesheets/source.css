@@ -1,15 +1,16 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #222;
-  padding-left:285px;
   position:relative;
+  padding-top: 30px;
+  padding-left: 275px;
+  padding-right: 10px;
 }
 
 #files p {
   width:225px;
   position:absolute;
-  top:15; left:0;
+  top:30px; left:10px;
   padding: 15px;
   border: 1px solid grey;
   color: lightgrey;
@@ -37,4 +38,5 @@ body {
 #contents p pre {
   padding: 15px;
   background-color: white;
+  overflow: auto;
 }
