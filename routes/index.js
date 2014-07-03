@@ -22,6 +22,7 @@ var cmdList = [
   { route: 'packages',    cmd: 'lslpp -cl',                 cb: jsonResp },
   { route: 'ps',          cmd: 'ps -ef',                    cb: textResp },
   { route: 'ps',          cmd: 'ps -fu %s',                 cb: textResp },
+  { route: 'rpms',        cmd: 'rpm -qa',                   cb: jsonResp },
   { route: 'uname',       cmd: 'uname -a',                  cb: textResp },
   { route: 'uptime',      cmd: 'uptime',                    cb: textResp },
   { route: 'user',        cmd: 'lsuser -c %s',              cb: jsonResp },
@@ -116,6 +117,17 @@ jsonRespHandlers = {
     getHeaders: function(lines) { return lines[1].replace(/  */g, ',').split(','); },
     getLines:   function(lines) { return lines.slice(2, lines.length - 1); },
     getValues:  function(line)  { return line.replace(/  */g, ',').split(','); },
+  },
+  rpms : {
+    getHeaders: function(lines) { return [ 'Name', 'Version', 'Release' ]; },
+    getLines:   function(lines) { return lines.slice(0, lines.length - 1); },
+    getValues:  function(line)  {
+      var values = line.split('-');
+      while (values.length > 3) {
+        values[0] = values.shift() + '-' + values[0];
+      }
+      return values;
+    },
   },
 };
 

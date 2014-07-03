@@ -16,6 +16,7 @@ var tableActionList = [
   { button: 'FS',       route: function() { return 'filesystems'; } },
   { button: 'Logins',   route: function() { return 'logins'; } },
   { button: 'Packages', route: function() { return 'packages'; } },
+  { button: 'RPMs',     route: function() { return 'rpms'; } },
   { button: 'NPMs',     route: function() { return 'npms'; } },
 ];
 var objectActionList = [
